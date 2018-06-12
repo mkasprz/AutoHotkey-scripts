@@ -9,9 +9,9 @@ The user will be asked to select two windows, one after another. After that ever
 ## Get selected window name
 It is an utility script used in "Close the window on sight" and "Bind two windows" scripts.
 
-## send-hard-refresh-key-combination
-This script is meant to be used from a console. It takes any number of string parameters and sends the <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>r</kbd> key combination to windows which title contains any of the passed strings, except "activate". "activate" is used to determine which windows should be activated before sending the combination. Any window which name contains string passed after "activate" will be activated. It seems required for some applications - for example the ones based on Chromium.
+## send-key-combination
+This script is meant to be used from a console. It takes any number of string parameters. The first one represents the combination to be send to windows (as in the table here: https://www.autohotkey.com/docs/commands/Send.htm#Parameters), and the rest windows names fragments or "activate". "activate" is used to determine which windows should be activated before sending the combination. Any window which name contains string passed after "activate" will be activated for a brief moment of sending the combination. It seems required for some applications - for example the ones based on Chromium.
 ### Example usage
-```
-c:/Program\ Files/AutoHotkey/AutoHotkey.exe ./send-hard-refresh-key-combination.ahk Firefox activate Iron
+```bash
+/c/Program\ Files/AutoHotkey/AutoHotkey.exe send-key-combination.ahk ^+r Firefox activate Iron
 ```
